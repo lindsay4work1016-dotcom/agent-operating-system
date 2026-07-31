@@ -113,7 +113,7 @@
 - 旧内容可以保留在下方作为 archive / earlier bank，不要让旧内容挡在最新内容前面。
 - 如果原文件太大、不适合整体倒排，采用低风险做法：顶部新增 `Latest Entry` 和 `Quick Jump Latest First`，不强行搬动全文。
 
-## 直达阅读入口
+## 直达阅读入口和轻量推送
 
 如果用户表示懒得打开 Obsidian、想直接看到更漂亮的阅读版，优先维护本地 HTML reader，而不是要求用户改变阅读习惯。
 
@@ -123,13 +123,30 @@
 - Build script: `.tools/build-kbsp-reader.js`
 - Desktop shortcut: `/Users/ison/Desktop/KBSP Learning Reader.webloc`
 
+用户更偏好“系统推送 / 自动打开”，而不是自己主动打开 Obsidian 或 reader。
+
+当前轻量自动化：
+
+- `kbsp-nightly-reader-open`: 每天晚上 9:30 本地时间，重新生成并打开 `00_Index/KBSP Learning Reader.html`。
+- `kbsp-morning-speaking-practice`: 每天早上 10:05 本地时间，在当前 thread 推送一个很短的口语练习。
+
+注意：这些是本地/当前 thread 自动化。凡是需要读取本地文件或打开本地 HTML 的动作，都依赖用户电脑开机且 Codex 可用；电脑关机或睡眠时不要假设它会可靠执行或自动补发。
+
 当更新被 reader 收录的主文档或练习文档时，整理完成后运行：
 
 ```bash
 node ".tools/build-kbsp-reader.js"
 ```
 
-然后用户可以双击桌面 `KBSP Learning Reader.webloc` 直接打开阅读版。
+早上口语练习要非常轻：
+
+- 不做大总结。
+- 不解释用户已经认识的普通词汇。
+- 每次只给 3 句左右，或一个 30 秒 mini drill。
+- 重点是“能开口说”的句子，而不是词典式释义。
+- 优先从最新 English Practice 文件里轮换句子。
+
+如果用户只要求日常练习，不要重读所有会议材料，不要更新 Obsidian，不要推送 GitHub。
 
 ## 会议 / 课程精华怎么提炼
 
