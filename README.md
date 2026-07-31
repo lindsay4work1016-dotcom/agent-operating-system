@@ -70,6 +70,22 @@ https://github.com/lindsay4work1016-dotcom/agent-operating-system
 请先读取 agent-operating-system 的 README，再按会议和词组整理原则处理这份材料。
 ```
 
+## 快捷指令
+
+如果用户输入：
+
+```text
+/meeting-notes
+```
+
+含义是：
+
+- 先读取本 `README.md`。
+- 再读取 `10_Workflows/01_Meeting_Vocab_Note_Principles.md`。
+- 按会议、SRT、课程 transcript、Obsidian 笔记和英文表达整理原则直接执行。
+- 默认只执行整理任务，不修改本原则库，也不推送 GitHub。
+- 只有当用户明确说“更新原则”“改 GitHub 里的规则”或“推送到 GitHub”时，才修改并推送本库。
+
 ## 维护原则
 
 - GitHub 是这个通用原则库的唯一维护入口。
