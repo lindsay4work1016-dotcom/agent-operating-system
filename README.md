@@ -20,6 +20,7 @@
 | --- | --- |
 | `README.md` | 本目录索引，也是 GitHub 主页 |
 | `01_Objective_Conversation_Principles.md` | 所有对话都遵循的客观、理性、可验证原则 |
+| `02_Secrets_Management.md` | 本机密钥统一管理位置、查找顺序、补充新密钥的规则 |
 
 ## 新对话通用开场白
 
