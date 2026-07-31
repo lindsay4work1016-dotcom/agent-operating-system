@@ -19,8 +19,31 @@
 | 文件 | 用途 |
 | --- | --- |
 | `README.md` | 本目录索引，也是 GitHub 主页 |
-| `01_Objective_Conversation_Principles.md` | 所有对话都遵循的客观、理性、可验证原则 |
-| `02_Secrets_Management.md` | 本机密钥统一管理位置、查找顺序、补充新密钥的规则 |
+| `00_Global/01_Objective_Conversation_Principles.md` | 所有对话都遵循的客观、理性、可验证原则 |
+| `00_Global/02_Secrets_Management.md` | 本机密钥统一管理位置、查找顺序、补充新密钥的规则 |
+| `10_Workflows/01_Meeting_Vocab_Note_Principles.md` | 整理会议、SRT、课程 transcript、Obsidian 笔记和英文表达时使用的工作流原则 |
+
+## 目录结构
+
+```text
+agent-operating-system/
+  README.md
+  00_Global/
+    01_Objective_Conversation_Principles.md
+    02_Secrets_Management.md
+  10_Workflows/
+    01_Meeting_Vocab_Note_Principles.md
+```
+
+## 原则调用顺序
+
+新对话或新任务开始时，默认先读本 `README.md`。
+
+然后按任务类型只读取相关文件，不要为了保险把所有原则都加载一遍：
+
+- 所有任务都适用：读取 `00_Global/01_Objective_Conversation_Principles.md`
+- 涉及密钥、token、`.env`、API 授权：读取 `00_Global/02_Secrets_Management.md`
+- 涉及会议、SRT、课程 transcript、Obsidian 笔记、词组整理：读取 `10_Workflows/01_Meeting_Vocab_Note_Principles.md`
 
 ## 新对话通用开场白
 
@@ -41,6 +64,12 @@ https://github.com/lindsay4work1016-dotcom/agent-operating-system
 请先读取项目 README 和相关 playbook，再开始执行。
 ```
 
+如果是会议、课程或词组整理，可以直接说：
+
+```text
+请先读取 agent-operating-system 的 README，再按会议和词组整理原则处理这份材料。
+```
+
 ## 维护原则
 
 - GitHub 是这个通用原则库的唯一维护入口。
@@ -52,6 +81,7 @@ https://github.com/lindsay4work1016-dotcom/agent-operating-system
 - 如果一条规则只影响某个项目，写进那个项目。
 - 每次新增、删除、重命名通用规则文件，都必须同步更新本 README 的文件目录。
 - 每次修改通用规则后，如果 README 里的说明也受影响，必须同步更新 README。
+- 不要在根目录继续平铺新原则文件；通用底层原则放进 `00_Global/`，具体工作流原则放进 `10_Workflows/`。
 
 ## 归属判断
 
