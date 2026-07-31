@@ -52,8 +52,12 @@
 当前默认位置：
 
 - Creator 1V1: `04_Creator_1v1/KBSP Creator 1V1 Key Takeaways.md`
+- Creator 1V1 English practice: `04_Creator_1v1/KBSP Creator 1V1 English Practice.md`
 - GGO course notes: `08_GGO/GGO Course Key Takeaways.md`
+- GGO English practice: `08_GGO/GGO English Practice.md`
+- KBSP meeting English practice: `01_Meetings/KBSP Meeting English Practice.md`
 - 通用英文表达: `02_Vocab/KBSP Meeting Vocab.md`
+- Direct reader: `00_Index/KBSP Learning Reader.html`
 - 已并入主文档的来源笔记: `Archive/`
 - 模板: `Templates/`
 
@@ -71,6 +75,61 @@
 - 旧的单独笔记如果已经并入主文档，移到 `Archive/`，不留在主工作流里干扰阅读。
 - 不保留死链接、空页面链接、过期入口。
 - 文件夹命名保持干净，例如 `08_GGO`、`07_RedNote`，不要出现多余空格或不明编号。
+
+## 学习型布局：精华和练习分开
+
+当材料同时包含方法论和英文表达时，优先拆成两类文件：
+
+- Key Takeaways / Notes: 放课程精华、会议判断、产品逻辑、达人方法论、复盘框架。
+- English Practice: 放可直接开口练习的英文表达、中文反推英文、替换练习、mini drill。
+
+不要把大量英文表达塞在精华主文档里，除非只是少量关键词。主文档应该服务理解和决策，练习文档应该服务开口和复用。
+
+英语练习文件推荐格式：
+
+```md
+### 1. recent momentum - 近期增长势头
+
+**可直接说：**
+- `The product sold well before, but we need to check if it still has recent momentum.`
+
+**中文反推英文：**
+- 这个产品以前卖得好，但我们要看它最近是否还有增长势头。
+
+**替换练习：**
+- Replace `product` with `campaign`, `creator`, `category`, or `content angle`.
+```
+
+必要时增加 `Mini Drills`，把 2-4 句表达组合成一个可以在会议或 creator feedback 里直接说的小段落。
+
+## 最新内容优先
+
+用户明确偏好打开文件后先看到最新内容。
+
+整理时默认做到：
+
+- 最新会议 / 课程 section 放在主文档前部，或至少在顶部 `Latest Entry` 里直接跳转。
+- 练习文件最新 section 放在旧表达 bank 前面。
+- 旧内容可以保留在下方作为 archive / earlier bank，不要让旧内容挡在最新内容前面。
+- 如果原文件太大、不适合整体倒排，采用低风险做法：顶部新增 `Latest Entry` 和 `Quick Jump Latest First`，不强行搬动全文。
+
+## 直达阅读入口
+
+如果用户表示懒得打开 Obsidian、想直接看到更漂亮的阅读版，优先维护本地 HTML reader，而不是要求用户改变阅读习惯。
+
+当前 KBSP vault 的直达阅读入口：
+
+- HTML: `00_Index/KBSP Learning Reader.html`
+- Build script: `.tools/build-kbsp-reader.js`
+- Desktop shortcut: `/Users/ison/Desktop/KBSP Learning Reader.webloc`
+
+当更新被 reader 收录的主文档或练习文档时，整理完成后运行：
+
+```bash
+node ".tools/build-kbsp-reader.js"
+```
+
+然后用户可以双击桌面 `KBSP Learning Reader.webloc` 直接打开阅读版。
 
 ## 会议 / 课程精华怎么提炼
 
@@ -194,9 +253,11 @@ Templates
 4. 提取可复用英文表达。
 5. 检查旧词库，避免明显重复。
 6. 写入对应 Obsidian 主文档。
-7. 更新 `Latest Entry`、目录或 quick jump。
-8. 检查 Obsidian 内链和占位符。
-9. 简洁告诉用户更新了哪里。
+7. 如果有可练习表达，写入对应 English Practice 文件，而不是只塞进主文档。
+8. 更新 `Latest Entry`、目录或 quick jump。
+9. 如果存在本地 HTML reader，重新生成 reader。
+10. 检查 Obsidian 内链和占位符。
+11. 简洁告诉用户更新了哪里。
 
 低风险整理可以直接做，例如：
 
@@ -205,6 +266,7 @@ Templates
 - 移动已归档源笔记
 - 清理 `.DS_Store`
 - 更新 `Latest Entry`
+- 重新生成本地 HTML reader
 
 高风险操作先说明判断，再谨慎执行，例如：
 
@@ -220,6 +282,8 @@ Templates
 - 文档打开后能快速知道最新整理到哪里。
 - 课程精华能帮助用户复盘方法论。
 - 英语表达能拿来练习和复用。
+- 精华文档和练习文档职责清楚，不互相污染。
+- 如果用户有直达阅读入口，reader 已同步到最新内容。
 - 文件夹结构清爽，主入口明确。
 - 旧材料不干扰当前阅读。
 - 下次处理新会议或新 SRT 时，读本文件即可延续同一套标准。
