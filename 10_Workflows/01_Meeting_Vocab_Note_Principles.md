@@ -11,7 +11,8 @@
 - Loom / Lark / Zoom transcript
 - creator 1v1 notes
 - vocabulary / expression extraction
-- Obsidian note updates related to meetings, courses, creator commerce, or business English
+
+如果整理结果要写入 Obsidian，同时读取 `02_Obsidian_Knowledge_Base_Maintenance.md` 和当前项目自己的入口文件。会议工作流负责提炼内容；Obsidian 工作流负责写入位置、导航、归档和源文件清理。
 
 用户常见触发语：
 
@@ -45,23 +46,11 @@
 - 内容结构怎么拆
 - 哪些英文表达可以直接练习和复用
 
-## 默认归档位置
+## 默认归档原则
 
 优先更新已有主文档，不轻易新建很多零散小文件。
 
-当前默认位置：
-
-- Creator 1V1: `04_Creator_1v1/KBSP Creator 1V1 Key Takeaways.md`
-- Creator 1V1 English practice: `04_Creator_1v1/KBSP Creator 1V1 English Practice.md`
-- GGO course notes: `08_GGO/GGO Course Key Takeaways.md`
-- GGO English practice: `08_GGO/GGO English Practice.md`
-- KBSP meeting English practice: `01_Meetings/KBSP Meeting English Practice.md`
-- 通用英文表达: `02_Vocab/KBSP Meeting Vocab.md`
-- Direct reader: `00_Index/KBSP Learning Reader.html`
-- 已并入主文档的来源笔记: `Archive/`
-- 模板: `Templates/`
-
-只有当内容明显属于新主题、新项目、新长期板块时，才新建文件夹或主文档。
+具体写入路径、Archive、Templates、reader 和 build script 必须由当前项目自己的规则定义，不在通用会议工作流里写死。只有当内容明显属于新主题、新项目、新长期板块时，才新建文件夹或主文档。
 
 ## Obsidian 阅读体验
 
@@ -72,9 +61,9 @@
 - 最新内容有清晰的 `Latest Entry` 或最新区块入口。
 - 主文档有 `目录`、`Quick Jump`、`Course map` 或同类导航。
 - 新增内容后同步更新最新入口。
-- 旧的单独笔记如果已经并入主文档，移到 `Archive/`，不留在主工作流里干扰阅读。
+- 旧的单独笔记如果已经并入主文档，按项目规则归档或清理，不留在主工作流里干扰阅读。
 - 不保留死链接、空页面链接、过期入口。
-- 文件夹命名保持干净，例如 `08_GGO`、`07_RedNote`，不要出现多余空格或不明编号。
+- 文件夹命名遵守项目规范，不要出现多余空格或不明编号。
 
 ## 学习型布局：精华和练习分开
 
@@ -117,26 +106,7 @@
 
 如果用户表示懒得打开 Obsidian、想直接看到更漂亮的阅读版，优先维护本地 HTML reader，而不是要求用户改变阅读习惯。
 
-当前 KBSP vault 的直达阅读入口：
-
-- HTML: `00_Index/KBSP Learning Reader.html`
-- Build script: `.tools/build-kbsp-reader.js`
-- Desktop shortcut: `/Users/ison/Desktop/KBSP Learning Reader.webloc`
-
-用户更偏好“系统推送 / 自动打开”，而不是自己主动打开 Obsidian 或 reader。
-
-当前轻量自动化：
-
-- `kbsp-nightly-reader-open`: 每天晚上 9:30 本地时间，重新生成并打开 `00_Index/KBSP Learning Reader.html`。
-- `kbsp-morning-speaking-practice`: 每天早上 10:05 本地时间，在当前 thread 推送一个很短的口语练习。
-
-注意：这些是本地/当前 thread 自动化。凡是需要读取本地文件或打开本地 HTML 的动作，都依赖用户电脑开机且 Codex 可用；电脑关机或睡眠时不要假设它会可靠执行或自动补发。
-
-当更新被 reader 收录的主文档或练习文档时，整理完成后运行：
-
-```bash
-node ".tools/build-kbsp-reader.js"
-```
+如果当前项目有直达阅读入口、build script 或自动化，按该项目规则维护。不要把一个项目的 reader 路径或自动化名称写成跨项目默认值。
 
 早上口语练习要非常轻：
 
@@ -201,8 +171,7 @@ node ".tools/build-kbsp-reader.js"
 - 只在某个视频案例里成立的表达
 - 已经在词库里收过、没有新用法的重复表达
 
-如果表达只适合课程内部理解，放在课程笔记。  
-如果表达在商业场景也常用，再同步进 `02_Vocab/KBSP Meeting Vocab.md`。
+如果表达只适合课程内部理解，放在课程笔记。若表达也适用于更通用的商业场景，再同步进项目指定的通用词库。
 
 ## 英语表达呈现格式
 
@@ -233,30 +202,14 @@ node ".tools/build-kbsp-reader.js"
 
 ## 文件夹和命名规则
 
-正式内容文件夹用数字排序：
-
-```text
-00_Index
-01_Meetings
-02_Vocab
-03_Playbooks
-04_Creator_1v1
-08_GGO
-```
-
-非主线资料不用强行编号：
-
-```text
-Archive
-Templates
-```
+正式内容文件夹是否使用数字排序、Archive 与 Templates 放在哪里，都由项目规则决定。
 
 命名原则：
 
 - 主文档名称要清楚表达用途。
 - 文件夹名不要有多余空格。
 - 不保留 `.DS_Store` 这类系统缓存文件。
-- 已合并进主文档的旧笔记优先归档，不直接删除。
+- 已合并进主文档的旧笔记按 Obsidian 维护工作流和项目规则归档或清理。
 
 ## 主动执行原则
 
@@ -274,7 +227,8 @@ Templates
 8. 更新 `Latest Entry`、目录或 quick jump。
 9. 如果存在本地 HTML reader，重新生成 reader。
 10. 检查 Obsidian 内链和占位符。
-11. 简洁告诉用户更新了哪里。
+11. 按 `02_Obsidian_Knowledge_Base_Maintenance.md` 和项目规则审计、清理已完全合并的源文件与冗余文档。
+12. 简洁告诉用户更新了哪里、清理了什么。
 
 低风险整理可以直接做，例如：
 
@@ -284,6 +238,7 @@ Templates
 - 清理 `.DS_Store`
 - 更新 `Latest Entry`
 - 重新生成本地 HTML reader
+- 把已验证、已完全合并且符合项目清理规则的临时源文件移到废纸篓
 
 高风险操作先说明判断，再谨慎执行，例如：
 

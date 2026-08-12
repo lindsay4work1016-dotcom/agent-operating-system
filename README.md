@@ -21,7 +21,8 @@
 | `README.md` | 本目录索引，也是 GitHub 主页 |
 | `00_Global/01_Objective_Conversation_Principles.md` | 所有对话都遵循的客观、理性、可验证原则 |
 | `00_Global/02_Secrets_Management.md` | 本机密钥统一管理位置、查找顺序、补充新密钥的规则 |
-| `10_Workflows/01_Meeting_Vocab_Note_Principles.md` | 整理会议、SRT、课程 transcript、Obsidian 笔记和英文表达时使用的工作流原则 |
+| `10_Workflows/01_Meeting_Vocab_Note_Principles.md` | 从会议、SRT 和课程 transcript 提炼知识与英文表达时使用的工作流原则 |
+| `10_Workflows/02_Obsidian_Knowledge_Base_Maintenance.md` | 把材料写入 Obsidian、维护导航并清理已合并源文件时使用的通用工作流 |
 
 ## 目录结构
 
@@ -33,6 +34,7 @@ agent-operating-system/
     02_Secrets_Management.md
   10_Workflows/
     01_Meeting_Vocab_Note_Principles.md
+    02_Obsidian_Knowledge_Base_Maintenance.md
 ```
 
 ## 原则调用顺序
@@ -43,7 +45,8 @@ agent-operating-system/
 
 - 所有任务都适用：读取 `00_Global/01_Objective_Conversation_Principles.md`
 - 涉及密钥、token、`.env`、API 授权：读取 `00_Global/02_Secrets_Management.md`
-- 涉及会议、SRT、课程 transcript、Obsidian 笔记、词组整理：读取 `10_Workflows/01_Meeting_Vocab_Note_Principles.md`
+- 涉及会议、SRT、课程 transcript、词组整理：读取 `10_Workflows/01_Meeting_Vocab_Note_Principles.md`
+- 涉及 Obsidian 写入、合并、归档、目录维护或源文件清理：读取 `10_Workflows/02_Obsidian_Knowledge_Base_Maintenance.md`，再读取当前项目自己的入口和维护规则
 
 ## 新对话通用开场白
 
@@ -82,6 +85,7 @@ https://github.com/lindsay4work1016-dotcom/agent-operating-system
 
 - 先读取本 `README.md`。
 - 再读取 `10_Workflows/01_Meeting_Vocab_Note_Principles.md`。
+- 如果整理结果要写入 Obsidian，再读取 `10_Workflows/02_Obsidian_Knowledge_Base_Maintenance.md` 和当前项目规则。
 - 按会议、SRT、课程 transcript、Obsidian 笔记和英文表达整理原则直接执行。
 - 默认只执行整理任务，不修改本原则库，也不推送 GitHub。
 - 只有当用户明确说“更新原则”“改 GitHub 里的规则”或“推送到 GitHub”时，才修改并推送本库。
